@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIST Website Replica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+        }
+        .logo-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .nav-btn {
+            transition: all 0.3s ease;
+        }
+        .nav-btn.active {
+            background-color: white;
+            color: black;
+        }
+        /* Custom shape for the triangle button */
+        .triangle-button {
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+            border-left: 80px solid #f97316; /* Orange color */
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .triangle-button:hover {
+            transform: scale(1.05);
+        }
+        .triangle-button-text {
+            position: absolute;
+            top: 50%;
+            left: -70px; /* Adjust positioning */
+            transform: translateY(-50%);
+            color: black;
+            font-weight: 600;
+            pointer-events: none; /* Make text unclickable */
+        }
+        /* Hide scrollbars */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        
+        /* Animation for glowing text */
+        .text-glow {
+             text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 20px rgba(249, 115, 22, 0.5);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.02);
+                opacity: 0.95;
+            }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 5s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-orange-500 to-orange-600 sticky top-0 z-50 shadow-lg shadow-orange-500/10">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7.014A8.003 8.003 0 0117.657 18.657zM9 13a1 1 0 11-2 0 1 1 0 012 0z"></path></svg>
+                <span class="text-3xl font-bold logo-font">MIST</span>
+            </a>
+            
+            <!-- Navigation Links -->
+            <div class="flex items-center space-x-4">
+                <button data-page="home" class="nav-btn px-6 py-2 rounded-full bg-black text-white text-lg font-semibold active">Home</button>
+                <button data-page="glazing" class="nav-btn px-6 py-2 rounded-full bg-black text-white text-lg font-semibold">Glazing MIST</button>
+                <button data-page="about" class="nav-btn px-6 py-2 rounded-full bg-black text-white text-lg font-semibold">About Us</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content: Pages will be toggled here -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Home Page Content -->
+        <section id="home" class="page">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Image Card 1 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm border border-orange-600/50 rounded-2xl p-4 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30 hover:border-orange-500">
+                    <div class="w-full h-64 bg-cover bg-center rounded-lg mb-4" style="background-image: url('bg1.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x400/f97316/000000?text=arsh)'">
+                    </div>
+                    <p class="text-xl font-semibold text-orange-400">arsh the qt</p>
+                </div>
+                <!-- Image Card 2 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm border border-orange-600/50 rounded-2xl p-4 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30 hover:border-orange-500">
+                    <div class="w-full h-64 bg-cover bg-center rounded-lg mb-4" style="background-image: url('bg2.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x400/f97316/000000?text=arnav)'">
+                    </div>
+                    <p class="text-xl font-semibold text-orange-400">arnav the hottie</p>
+                </div>
+                <!-- Image Card 3 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm border border-orange-600/50 rounded-2xl p-4 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30 hover:border-orange-500">
+                    <div class="w-full h-64 bg-cover bg-center rounded-lg mb-4" style="background-image: url('bg3.png');" onerror="this.style.backgroundImage='url(https://placehold.co/600x400/f97316/000000?text=ayan)'">
+                    </div>
+                    <p class="text-xl font-semibold text-orange-400">ayan the pookie</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center space-x-8">
+                <div id="toggleButton" class="triangle-button">
+                    <span class="triangle-button-text">click me</span>
+                </div>
+                <p id="toggleText" class="text-3xl font-bold text-orange-500 hidden">YOU CLICKED THE BUTTON YAYYY!!!</p>
+            </div>
+             <p class="text-center mt-8 text-gray-400">(on clicking the button, the text on the right appears and on clicking the button again, it disappears)</p>
+        </section>
+
+        <!-- Glazing MIST Page Content -->
+        <section id="glazing" class="page hidden text-center">
+            <div class="flex justify-center items-center space-x-8 my-16 select-none">
+                <h1 class="text-9xl font-extrabold logo-font text-glow animate-pulse-glow">MIST</h1>
+                <h1 class="text-9xl font-extrabold logo-font text-glow animate-pulse-glow transform scale-x-[-1] scale-y-[-1]" style="animation-delay: 0.5s;">MIST</h1>
+                <h1 class="text-9xl font-extrabold logo-font text-glow animate-pulse-glow transform scale-x-[-1]" style="animation-delay: 1s;">MIST</h1>
+            </div>
+            <p class="text-lg max-w-4xl mx-auto text-gray-300">
+                Welcome to Glazing MIST, a conceptual framework designed to explore the synergy between advanced language models and content obfuscation techniques. This platform delves into the practical applications of GPT-powered text generation alongside the innovative Glaze project, which aims to protect artists from unauthorized AI style mimicry.
+            </p>
+            <p class="text-lg max-w-4xl mx-auto mt-4 text-gray-300">
+                Our exploration provides insights into how these technologies can coexist and complement each other. We examine the ethical implications, creative possibilities, and technical challenges of integrating generative AI with protective measures, fostering a deeper understanding of the future of digital content and artistic integrity in an increasingly automated world.
+            </p>
+        </section>
+
+        <!-- About Us Page Content -->
+        <section id="about" class="page hidden">
+            <div class="flex flex-col items-center justify-center h-[60vh] text-center">
+                <button id="showInfoButton" class="bg-orange-600 hover:bg-orange-700 text-black text-2xl font-bold px-12 py-6 rounded-2xl transition-transform duration-200 hover:scale-105">
+                    press me pls
+                </button>
+                <p class="mt-8 text-lg text-gray-400">clicking on this button shows your name, registration number and phone number in a JS message box</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom Modal for About Us Info -->
+    <div id="infoModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div id="modalContent" class="bg-gray-800 border border-orange-500 text-white rounded-2xl p-8 shadow-lg max-w-md w-full text-left relative transform transition-transform duration-300 scale-95">
+            <button id="closeModalButton" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-3xl font-bold mb-6 text-orange-500">User Information</h2>
+            <div class="space-y-4 text-lg">
+                <p><span class="font-semibold">Name:</span> PK</p>
+                <p><span class="font-semibold">Registration No:</span> 240905010</p>
+                <p><span class="font-semibold">Phone Number:</span> +91 9483925316</p>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="clickSound" src="music.mp3"></audio>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Page Navigation ---
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const pages = document.querySelectorAll('.page');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetPageId = button.dataset.page;
+
+                    // Hide all pages
+                    pages.forEach(page => {
+                        page.classList.add('hidden');
+                    });
+
+                    // Show the target page
+                    const targetPage = document.getElementById(targetPageId);
+                    if (targetPage) {
+                        targetPage.classList.remove('hidden');
+                    }
+
+                    // Update active state on nav buttons
+                    navButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+                });
+            });
+
+            // --- Home Page: Toggle Text ---
+            const toggleButton = document.getElementById('toggleButton');
+            const toggleText = document.getElementById('toggleText');
+            const clickSound = document.getElementById('clickSound');
+
+            if (toggleButton && toggleText && clickSound) {
+                toggleButton.addEventListener('click', () => {
+                    toggleText.classList.toggle('hidden');
+                    clickSound.play();
+                });
+            }
+            
+            // --- About Us Page: Info Modal ---
+            const showInfoButton = document.getElementById('showInfoButton');
+            const infoModal = document.getElementById('infoModal');
+            const closeModalButton = document.getElementById('closeModalButton');
+            const modalContent = document.getElementById('modalContent');
+
+
+            if(showInfoButton && infoModal && closeModalButton && modalContent) {
+                showInfoButton.addEventListener('click', () => {
+                    infoModal.classList.remove('hidden');
+                    // Use a timeout to allow the display property to change before starting the transition
+                    setTimeout(() => {
+                        infoModal.classList.remove('opacity-0');
+                        modalContent.classList.remove('scale-95');
+                    }, 10);
+                });
+
+                function closeModal() {
+                    infoModal.classList.add('opacity-0');
+                    modalContent.classList.add('scale-95');
+                     // Wait for the transition to finish before hiding the element
+                    setTimeout(() => {
+                        infoModal.classList.add('hidden');
+                    }, 300);
+                }
+
+                closeModalButton.addEventListener('click', closeModal);
+                
+                // Also close modal by clicking on the background overlay
+                infoModal.addEventListener('click', (event) => {
+                    if (event.target === infoModal) {
+                         closeModal();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
